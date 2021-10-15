@@ -1,0 +1,42 @@
+
+<h1>Your availibility Slots: </h1>
+
+<% if (slots.length > 0) { %>
+    <ul>
+        <% for (slot of slots) { %>
+        <li>start: <%= slot.start %> end: <%= slot.end %> date: <%= slot.date %> employee: <% if (slot.employee != undefined || slot.employee != null) { %>
+                 <%= slot.employee.name %>
+            <% } %>
+            <% if (slot.employee == undefined || slot.employee == null) { %>
+                 Not yet booked!!
+            <% } %>
+
+            <a href="/user/meeting/delete/<%= slot.id %>">X</a>
+        </li>
+        <% } %>
+    </ul>
+<% } %>
+
+
+
+
+<h1>Being a manager You can schedule meetings</h1>
+
+
+<form action="/user/status/manager/schedule/<%= locals.user.id %>" method="POST">
+     <p>Choose a time for your meeting</p>
+        <label for="start">start: </label>
+        <input type="time" id="start" name="start"
+        min="09:00" max="17:00" required>
+      
+        <label for="end">end: </label>
+     <input type="time" id="end" name="end"
+      min="09:00" max="17:00" required>
+
+     <label for="start">Date: </label>
+       <input type="date" id="start" name="date"
+              value = "<%= setDate.curr %>"
+              min="<%= setDate.min %>" max="<%= setDate.max %>">
+
+    <input type="submit" value="Schedule">
+</form>

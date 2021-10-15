@@ -1,0 +1,19 @@
+<h1>Being an employee You can book meetings</h1>
+<h2>Given below the list of managers to book meetings </h2>
+
+
+
+<div>
+    <ul>
+        <% for (meeting of meetings) { %>
+            <li> <%= meeting.start %>   <%= meeting.end %>  <%= meeting.date %>  <%= meeting.manager.name %> <a href="/user/meeting/book/<%= meeting.id %>"> Book Meeting</a></li>    
+        <% } %>
+    </ul>
+</div>
+
+
+
+
+<section>
+    <p>Check Your appointments here: <a href="/user/status/employee/appointments/<%= locals.user.id %>">Click</a></p>
+</section>

@@ -1,0 +1,12 @@
+<h1>These are your appointments</h1>
+
+
+<ul>
+    <% for (appt of appointments) { %>
+       <li> start: <%= appt.start %>  end: <%= appt.end %> date: <%= appt.date %>  Manager: <%= appt.manager.name %> <a href="/user/status/employee/unbook/<%= appt.id %>">
+         Unbook
+       </a>
+    </li>
+
+    <% } %>
+</ul>
