@@ -7,11 +7,11 @@
         <li>start: <%= slot.start %> end: <%= slot.end %> date: <%= slot.date %> employee: <% if (slot.employee != undefined || slot.employee != null) { %>
                  <%= slot.employee.name %>
             <% } %>
-            <% if (slot.employee == undefined || slot.employee == null) { %>
+            <% if (slot.employee == undefined) { %>
                  Not yet booked!!
             <% } %>
 
-            <a href="/user/meeting/delete/<%= slot.id %>">X</a>
+            <a href="/user/meeting/delete/<%= slot.id %>">X </a>
         </li>
         <% } %>
     </ul>
