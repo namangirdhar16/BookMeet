@@ -8,6 +8,6 @@ const isManager = require("../middleware/isManager");
 Router.use("/manager", require("./manager"));
 Router.get("/", checkAuthenticated, statusController.status);
 Router.get("/employee", isEmployee, statusController.employee);
-Router.get("/employee/appointments/:id", statusController.appointments);
+// Router.get("/employee/appointments/:id", statusController.appointments);
 Router.get("/employee/unbook/:id", statusController.unbook);
 module.exports = Router;
